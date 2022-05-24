@@ -1,0 +1,53 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $black;
+  mask-repeat: no-repeat;
+  mask-position: 50%;
+  transition: background-color 300ms ease-in-out;
+
+  //icon sizes
+  &--ty {
+    width: calc(#{$unit} * 3);
+    height: calc(#{$unit} * 3);
+  }
+  &--xs {
+    width: calc(#{$unit} * 4);
+    height: calc(#{$unit} * 4);
+  }
+  &--sm {
+    width: calc(#{$unit} * 5);
+    height: calc(#{$unit} * 5);
+  }
+  &--base {
+    width: calc(#{$unit} * 6);
+    height: calc(#{$unit} * 6);
+  }
+  &--md {
+    width: calc(#{$unit} * 8);
+    height: calc(#{$unit} * 8);
+  }
+
+  //icons
+
+  .logo-top {
+    mask-image: url(/assets/icons/logo-top.svg);
+  }
+  .logo-bottom {
+    content: url(/assets/icons/logo-bottom.svg);
+  }
+
+  .icon--search {
+    //content: url(/assets/icons/search.svg);
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+
+  .icon--sort {
+    content: url(/assets/icons/sort.svg);
+  }
+}

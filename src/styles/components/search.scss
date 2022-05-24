@@ -1,0 +1,12 @@
+/* 
+components: search.scss
+*/
+
+.search {
+  display: flex;
+  cursor: pointer;
+  width: 255px;
+  height: 48px;
+  background-color: $primary--grey;
+  border-radius: 10px;
+}
