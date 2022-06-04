@@ -1,0 +1,48 @@
+/* 
+components: property.scss
+*/
+
+.property {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  width: 350px;
+  &__title {
+    font: 32px "Bangers", cursive;
+  }
+  &__input {
+    height: 48px;
+    background-color: $primary--grey;
+    border-radius: 10px;
+  }
+}
+
+.uploads__container {
+  width: 350px;
+  display: flex;
+  gap: 30px;
+  color: $white;
+  .profile__photo {
+    display: flex;
+    flex-direction: column;
+    &__circle {
+      background-color: $primary--grey;
+      width: 150px;
+      height: 150px;
+      border-radius: $border-circle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__icon {
+      background-color: rgb(21, 255, 33);
+      width: 50px;
+      height: 50px;
+      border-radius: $border-circle;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/* 
+utils:images.scss
+*/
+
+.img {
+  display: inline-block;
+  vertical-align: middle;
+  mask-repeat: no-repeat;
+  mask-position: 50%;
+  //sizes
+  &--profile {
+    content: url(/app/assets/images/player1.webp);
+    height: 203px;
+    width: 203px;
+    border-radius: $border-circle;
+  }
+}
