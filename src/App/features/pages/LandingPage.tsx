@@ -57,11 +57,12 @@ const LandingPage = () => {
             ></input>
           </div>
         </div>
-        <Card players={playersList} />
-        {/* <>
-          {playersList.filter(filterSearch).map(() => (
+
+        <div className="cards__container">
+          {playersList.filter(filterSearch).map((player) => (
+            <Card player={player} />
           ))}
-        </> */}
+        </div>
       </div>
     </div>
   );

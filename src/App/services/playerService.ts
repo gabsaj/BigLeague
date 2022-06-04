@@ -14,4 +14,9 @@ export default class PlayerService extends BaseService {
     const response = await this.instance.post("players/", data);
     return response;
   }
+
+  async fetchPlayerById(id: string): Promise<Player> {
+    const response = await this.instance.get(`players/${id}`);
+    return response.data;
+  }
 }

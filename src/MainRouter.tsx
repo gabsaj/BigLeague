@@ -8,7 +8,7 @@ const MainRouter = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/AddPlayer" element={<AddPlayer />}></Route>
-      <Route path="/PlayerPage" element={<PlayerPage />}></Route>
+      <Route path="/PlayerPage/:playerId" element={<PlayerPage />}></Route>
     </Routes>
   );
 };

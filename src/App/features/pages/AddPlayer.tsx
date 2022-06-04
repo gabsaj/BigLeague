@@ -1,6 +1,6 @@
 import { count } from "console";
 import React, { useState } from "react";
-import { idText } from "typescript";
+import { idText, textChangeRangeIsUnchanged } from "typescript";
 import { v4 as id } from "uuid";
 import PlayerService from "../../services/playerService";
 import { Player } from "../../types/Player";
@@ -20,6 +20,7 @@ const AddPlayer = () => {
         country: country,
         nickname: nickname,
         id: id(),
+        earnings: totalEarnings ? totalEarnings : null,
       });
       return response;
     } catch (error) {

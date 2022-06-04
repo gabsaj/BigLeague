@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PlayerService from "../../services/playerService";
 import { Player } from "../../types/Player";
 import Nav from "../components/Nav";
-interface Props {
-  players: Player[];
-}
+import PlayerDetails from "../components/PlayerDetails";
 
-const PlayerPage: React.FC<Props> = ({ players }) => {
+const PlayerPage = () => {
+  const initialValues: Player = {
+    name: "",
+    nickname: "",
+    country: "",
+    id: "",
+    earnings: null,
+  };
+  const playerService = new PlayerService();
+  const [player, setPlayer] = useState<Player>(initialValues);
+  const params = useParams();
+  console.log(params.playerId);
+  const fetchPlayer = async () => {
+    try {
+      if (params.playerId) {
+        const response = await playerService.fetchPlayerById(params.playerId);
+        setPlayer(response);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchPlayer();
+  }, []);
   return (
     <div className="App">
       <Nav />
 
       <div className="main__layout">
-        {players.map((player) => (
-          <div className="profile mt--30">
-            <div className="card__imgContainer">
-              <div className="img--profile"></div>
-              <div className="card__flag"></div>
-            </div>
-            <div className="card__name mt--30">{player.name}</div>
-            <div className="card__nickname mt--30">{player.nickname}</div>
-            <div className="card__country mt--30">{player.country}</div>
-            <div className="card__earnings mt--30">{player.earnings}</div>
-          </div>
-        ))}
+        <PlayerDetails player={player} />
       </div>
     </div>
   );

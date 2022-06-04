@@ -3,4 +3,5 @@ export interface Player {
   nickname: string;
   country: string;
   id: string;
+  earnings: number | null;
 }
