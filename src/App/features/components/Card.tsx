@@ -14,8 +14,8 @@ const Card: React.FC<Props> = (props) => {
         <div className="img--profile"></div>
         <div className="card__flag"></div>
       </div>
-      <div className="card__name">{player.name}</div>
-      <div className="card__nickname">{player.nickname}</div>
+      <div className="card__property">{player.name}</div>
+      <div className="card__property">{player.nickname}</div>
     </NavLink>
   );
 };

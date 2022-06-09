@@ -1,16 +1,25 @@
 {
   "players": [
     {
-      "name": "Karapandža",
+      "name": "Victor",
       "country": "Croatia",
-      "nickname": "Pandža",
-      "id": "Jk3cNhA"
+      "nickname": "Vik",
+      "id": "Jk3cNhA",
+      "earnings": 65.922
     },
     {
       "name": "Zlovimir",
       "country": "Ireland",
       "nickname": "Zloova",
-      "id": "NmtDuWh"
+      "id": "NmtDuWh",
+      "earnings": 22.436
+    },
+    {
+      "name": "Alibaba",
+      "country": "Countrystan",
+      "nickname": "BigAl",
+      "id": "d0775b92-a194-49b1-b9a1-e1c5d174696b",
+      "earnings": 121.065
     }
   ]
 }

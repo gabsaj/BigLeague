@@ -1,9 +1,6 @@
-import { count } from "console";
-import React, { useState } from "react";
-import { idText, textChangeRangeIsUnchanged } from "typescript";
+import { useState } from "react";
 import { v4 as id } from "uuid";
 import PlayerService from "../../services/playerService";
-import { Player } from "../../types/Player";
 import Nav from "../components/Nav";
 
 const AddPlayer = () => {

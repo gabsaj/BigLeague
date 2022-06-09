@@ -6,7 +6,7 @@ const Nav = () => {
     case "/":
       Pagename = "Home";
       break;
-    case "/PlayerPage":
+    case `/PlayerPage/`:
       Pagename = "Player profile";
       break;
     case "/AddPlayer":

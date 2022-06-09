@@ -14,8 +14,9 @@ const PlayerDetails: React.FC<Props> = (props) => {
         <div className="card__flag"></div>
       </div>
       <div className="card__name mt--30">{player.name}</div>
-      <div className="card__nickname mt--30">{player.nickname}</div>
-      <div className="card__country mt--30">{player.country}</div>
+      <div className="card__property mt--30">{player.nickname}</div>
+      <div className="card__property mt--30">{player.country}</div>
+      <div className="card__property mt--30">{player.earnings}</div>
     </div>
   );
 };
