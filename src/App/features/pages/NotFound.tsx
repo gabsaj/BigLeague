@@ -13,8 +13,8 @@ const NotFound = () => {
       </Link>
       <div className="main__layout">
         <div className="profile">
-          <img className="img--404 my--32" alt="404" />
-          <img className="img--text" alt="Player not found" />
+          <img className="profile__img--404 my--32" alt="404" />
+          <img className="profile__img--text" alt="Player not found" />
         </div>
       </div>
     </div>

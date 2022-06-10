@@ -10,7 +10,7 @@ const PlayerDetails: React.FC<Props> = (props) => {
   return (
     <div className="profile">
       <div className="profile__imgContainer mt--32">
-        <div className="img--card "></div>
+        <div className="card__img--large"></div>
         <div className="card__flag"></div>
       </div>
       <div className="profile__name type--bangers type--wgt--regular mt--32">

@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Flip, toast } from "react-toastify";
 import PlayerService from "../../services/playerService";
 import { Player } from "../../types/Player";
 import Nav from "../components/Nav";
 import PlayerDetails from "../components/PlayerDetails";
 
+const initialValues: Player = {
+  name: "",
+  nickname: "",
+  country: "",
+  id: "",
+  earnings: null,
+};
+
 const PlayerPage = () => {
-  const initialValues: Player = {
-    name: "",
-    nickname: "",
-    country: "",
-    id: "",
-    earnings: null,
-  };
-  const playerService = new PlayerService();
   const [player, setPlayer] = useState<Player>(initialValues);
+
+  const playerService = new PlayerService();
   const params = useParams();
-  console.log(params.playerId);
+
   const fetchPlayer = async () => {
     try {
       if (params.playerId) {
@@ -24,12 +27,20 @@ const PlayerPage = () => {
         setPlayer(response);
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Failed to create a player.", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 2000,
+        transition: Flip,
+        theme: "dark",
+      });
     }
   };
+
   useEffect(() => {
     fetchPlayer();
   });
+
   return (
     <div className="App">
       <Nav />

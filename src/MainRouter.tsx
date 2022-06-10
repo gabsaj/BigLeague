@@ -8,9 +8,9 @@ const MainRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/AddPlayer" element={<AddPlayer />}></Route>
-      <Route path="/PlayerPage/:playerId" element={<PlayerPage />}></Route>
-      <Route path="/NotFound" element={<NotFound />}></Route>
+      <Route path="/add-player" element={<AddPlayer />}></Route>
+      <Route path="/player-page/:playerId" element={<PlayerPage />}></Route>
+      <Route path="/not-found" element={<NotFound />}></Route>
     </Routes>
   );
 };

@@ -61,9 +61,9 @@ const LandingPage = () => {
         </div>
 
         <div className="card__container mb--40">
-          <Link to={`/NotFound`} className="card">
+          <Link to={`/not-found`} className="card " key="1">
             <div className="card__imgContainer">
-              <div className="img--card"></div>
+              <div className="card__img"></div>
               <div className="card__flag"></div>
             </div>
             <div className="card__name type--bangers type--wgt--regular">

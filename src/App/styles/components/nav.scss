@@ -14,6 +14,12 @@
     border: 1px solid white;
     width: 200px;
     height: 50px;
+    &--top {
+      content: url(../../assets/images/logo-top.svg);
+    }
+    &--bottom {
+      content: url(../../assets/images/logo-bottom.svg);
+    }
   }
   &__middle {
     display: flex;

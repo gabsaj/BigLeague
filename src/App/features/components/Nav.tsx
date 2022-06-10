@@ -1,33 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
-  let Pagename;
-  switch (window.location.pathname) {
-    case "/":
-      Pagename = "Home";
-      break;
-    case `/PlayerPage/`:
-      Pagename = "Player profile";
-      break;
-    case "/AddPlayer":
-      Pagename = "Add Player";
-  }
+  const [pageName, setPageName] = useState<string>("");
 
-  const [pageName, setPageName] = useState<string>();
-  const switchName = () => {};
+  const switchName = () => {
+    switch (window.location.pathname) {
+      case "/":
+        setPageName("Home");
+        break;
+      case "/player-page/":
+        setPageName("Player profile");
+        break;
+      case "/add-player":
+        setPageName("Add Player");
+        break;
+    }
+  };
+
+  useEffect(() => {
+    switchName();
+  });
 
   return (
     <div className="nav">
       <NavLink to={"/"} className="logo">
-        <img className="img--logo--top" alt="Logo--top" />
-        <img className="img--logo--bottom" alt="Logo--bottom" />
+        <img className="nav__logo--top" alt="Logo--top" />
+        <img className="nav__logo--bottom" alt="Logo--bottom" />
       </NavLink>
       <div className="nav__pagename  type--poppins type--wgt--medium">
         {pageName}
       </div>
       <NavLink
-        to={"/AddPlayer"}
+        to={"/add-player"}
         className="nav__add btn type--poppins type--wgt--medium "
       >
         Add player

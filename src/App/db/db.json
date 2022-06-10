@@ -41,6 +41,13 @@
       "nickname": "J23",
       "id": "da74f104-de20-4dac-b649-4e001555bee9",
       "earnings": 48.987
+    },
+    {
+      "name": "ime",
+      "country": "zemlja",
+      "nickname": "nik",
+      "id": "ca593f86-6214-4862-8274-147afb8bf6b3",
+      "earnings": 102
     }
   ]
 }

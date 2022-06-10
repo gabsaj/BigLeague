@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { toast, Flip } from "react-toastify";
 import { v4 as id } from "uuid";
 import PlayerService from "../../services/playerService";
@@ -13,7 +14,7 @@ const AddPlayer = () => {
 
   const handleSubmit = async () => {
     if (playerName !== "" && country !== "" && nickname !== "") {
-      const response = await playerService.createPlayer({
+      await playerService.createPlayer({
         name: playerName,
         country: country,
         nickname: nickname,
@@ -27,7 +28,6 @@ const AddPlayer = () => {
         transition: Flip,
         theme: "dark",
       });
-      return response;
     } else {
       toast.error("Failed to create a player.", {
         position: "top-center",
@@ -38,10 +38,15 @@ const AddPlayer = () => {
       });
     }
   };
-  //console.log(playerName, country, nickname, totalEarnings);
   return (
     <div className="App">
       <Nav />
+      <Link to={"/"} className="back type--poppins type--wgt--regular">
+        <div className="btn btn--back">
+          <i className="icon icon--md icon--back"></i>
+        </div>
+        <div>Back</div>
+      </Link>
       <div className="main__layout">
         <div className="main__layout__title type--bangers type--wgt--regular py--80">
           Add new player

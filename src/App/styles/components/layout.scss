@@ -51,13 +51,21 @@
     font-size: 24px;
   }
   &__imgContainer {
-    height: calc($card--img + 4px);
-    width: calc($card--img + 4px);
+    height: calc($profile--img + 4px);
+    width: calc($profile--img + 4px);
     border-radius: $border-circle;
     background-image: $gradient;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  &__img {
+    &--404 {
+      content: url(../../assets/images/404.svg);
+    }
+    &--text {
+      content: url(../../assets/images/text.svg);
+    }
   }
 }
 

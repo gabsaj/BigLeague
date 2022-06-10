@@ -6,18 +6,6 @@ utils:images.scss
   display: inline-block;
   vertical-align: middle;
   //sizes
-  &--card {
-    content: url(/app/assets/images/player1.webp);
-    height: $card--img;
-    width: $card--img;
-    border-radius: $border-circle;
-  }
-  &--profile {
-    content: url(/app/assets/images/player1.webp);
-    border-radius: $border-circle;
-    width: $profile--img;
-    height: $profile--img;
-  }
   &--logo {
     &--top {
       content: url(../../assets/images/logo-top.svg);

@@ -9,9 +9,9 @@ interface Props {
 const Card: React.FC<Props> = (props) => {
   const { player } = props;
   return (
-    <NavLink to={`/PlayerPage/${player.id}`} className="card" key={player.id}>
+    <NavLink to={`/player-page/${player.id}`} className="card" key={player.id}>
       <div className="card__imgContainer">
-        <div className="img--card"></div>
+        <div className="card__img"></div>
         <div className="card__flag"></div>
       </div>
       <div className="card__name type--bangers type--wgt--regular">
