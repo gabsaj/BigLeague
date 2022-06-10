@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast, Flip } from "react-toastify";
 import { v4 as id } from "uuid";
 import PlayerService from "../../services/playerService";
 import Nav from "../components/Nav";
@@ -11,7 +12,7 @@ const AddPlayer = () => {
   const playerService = new PlayerService();
 
   const handleSubmit = async () => {
-    try {
+    if (playerName !== "" && country !== "" && nickname !== "") {
       const response = await playerService.createPlayer({
         name: playerName,
         country: country,
@@ -19,9 +20,22 @@ const AddPlayer = () => {
         id: id(),
         earnings: totalEarnings ? totalEarnings : null,
       });
+      toast.success("Player created.", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 2000,
+        transition: Flip,
+        theme: "dark",
+      });
       return response;
-    } catch (error) {
-      console.log(error);
+    } else {
+      toast.error("Failed to create a player.", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 2000,
+        transition: Flip,
+        theme: "dark",
+      });
     }
   };
   //console.log(playerName, country, nickname, totalEarnings);
@@ -29,59 +43,77 @@ const AddPlayer = () => {
     <div className="App">
       <Nav />
       <div className="main__layout">
+        <div className="main__layout__title type--bangers type--wgt--regular py--80">
+          Add new player
+        </div>
         <div className="property__container">
-          <div className="property mt--30">
-            <div className="property__title">Name</div>
+          <div className="property mt--32">
+            <div className="property__title type--bangers type--wgt--regular mb--6">
+              Name
+            </div>
             <input
               type="text"
               onChange={(event) => setPlayerName(event.target.value)}
               placeholder="Name"
-              className="property__input input"
+              className="property__input input type--poppins type--wgt--regular"
             ></input>
           </div>
-          <div className="property  mt--30">
-            <div className="property__title">Country</div>
+          <div className="property  mt--32">
+            <div className="property__title type--bangers type--wgt--regular mb--6">
+              Country
+            </div>
             <input
               type="text"
               onChange={(event) => setCountry(event.target.value)}
               placeholder="Country"
-              className="property__input input"
+              className="property__input input type--poppins type--wgt--regular"
             ></input>
           </div>
-          <div className="property  mt--30">
-            <div className="property__title">Nickname</div>
+          <div className="property  mt--32">
+            <div className="property__title type--bangers type--wgt--regular mb--6">
+              Nickname
+            </div>
             <input
               type="text"
               onChange={(event) => setNickname(event.target.value)}
               placeholder="Nickname"
-              className="property__input input"
+              className="property__input input type--poppins type--wgt--regular"
             ></input>
           </div>
-          <div className="property  mt--30">
-            <div className="property__title">Total Earnings</div>
+          <div className="property  mt--32">
+            <div className="property__title type--bangers type--wgt--regular mb--6">
+              Total Earnings
+            </div>
             <input
               type="number"
               onChange={(event) => setTotalEarnings(Number(event.target.value))}
               placeholder="Total earnings"
-              className="property__input input"
+              className="property__input input type--poppins type--wgt--regular"
             ></input>
           </div>
-          <div className="uploads__container  mt--30">
+          <div className="uploads__container  mt--32">
             <div className="profile__photo">
-              <div className="property__title">Profile photo</div>
+              <div className="property__title--upload type--bangers type--wgt--regular mb--6">
+                Profile photo
+              </div>
               <div className="profile__photo__circle">
-                <i className="icon--upload"></i>
+                <i className="icon  icon--base icon--upload"></i>
               </div>
             </div>
             <div className="profile__photo">
-              <div className="property__title">Profile photo</div>
+              <div className="property__title--upload type--bangers type--wgt--regular mb--6">
+                Profile photo
+              </div>
 
               <div className="profile__photo__circle">
-                <i className="icon--upload"></i>
+                <i className="icon icon--base icon--upload"></i>
               </div>
             </div>
           </div>
-          <button onClick={() => handleSubmit()} className="btn  mt--30">
+          <button
+            onClick={() => handleSubmit()}
+            className="btn btn--submit  mt--32 type--poppins type--wgt--medium "
+          >
             Add player
           </button>
         </div>

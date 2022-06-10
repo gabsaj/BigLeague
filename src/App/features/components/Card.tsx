@@ -11,11 +11,13 @@ const Card: React.FC<Props> = (props) => {
   return (
     <NavLink to={`/PlayerPage/${player.id}`} className="card" key={player.id}>
       <div className="card__imgContainer">
-        <div className="img--profile"></div>
+        <div className="img--card"></div>
         <div className="card__flag"></div>
       </div>
-      <div className="card__property">{player.name}</div>
-      <div className="card__property">{player.nickname}</div>
+      <div className="card__name type--bangers type--wgt--regular">
+        {player.name}
+      </div>
+      <div className="card__property ">{player.nickname}</div>
     </NavLink>
   );
 };

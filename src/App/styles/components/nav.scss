@@ -22,12 +22,11 @@
   }
   &__pagename {
     display: block;
-    font: 26px "Poppins", sans-serif;
     color: $white;
     &::after {
       display: block;
       content: "";
-      height: 2px;
+      height: 1px;
       width: 100%;
       background-image: $gradient;
     }

@@ -1,0 +1,25 @@
+/* 
+components:btn.scss
+*/
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: $gradient;
+  border-radius: $border-button;
+  color: #2d3541;
+  font-size: 16px;
+  padding: 12px 16px;
+  cursor: pointer;
+  &--submit {
+    align-self: center;
+    height: 48px;
+    width: 137px;
+  }
+  &--back {
+    height: 48px;
+    width: 48px;
+  }
+}

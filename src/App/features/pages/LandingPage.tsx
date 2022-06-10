@@ -3,6 +3,7 @@ import { Player } from "../../types/Player";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
 import PlayerService from "../../services/playerService";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [playersList, setPlayersList] = useState<Player[]>([]);
@@ -35,30 +36,41 @@ const LandingPage = () => {
 
   useEffect(() => {
     fetchPlayers();
-  }, []);
+  });
 
   return (
     <div className="App">
       <Nav />
 
       <div className="main__layout">
-        <div className="main__layout__title">featured players</div>
+        <div className="main__layout__title type--bangers type--wgt--regular py--80">
+          featured players
+        </div>
         <div className="filter">
-          <div className="sort">
+          <div className="sort type--poppins type--wgt--regular">
             Sort
-            <i className="icon--md icon--sort"></i>
+            <i className="icon icon--base icon--sort"></i>
           </div>
-          <div className="search">
-            <i className="icon--md icon--search"></i>
+          <div className="search type--poppins type--wgt--regular">
+            <i className="icon icon--base icon--search"></i>
             <input
               onChange={(event) => handleSearch(event)}
-              placeholder="Search..."
               className="input"
             ></input>
           </div>
         </div>
 
-        <div className="card__container">
+        <div className="card__container mb--40">
+          <Link to={`/NotFound`} className="card">
+            <div className="card__imgContainer">
+              <div className="img--card"></div>
+              <div className="card__flag"></div>
+            </div>
+            <div className="card__name type--bangers type--wgt--regular">
+              PlayerUnknown
+            </div>
+            <div className="card__property ">NoNickname</div>
+          </Link>
           {playersList.filter(filterSearch).map((player) => (
             <Card player={player} />
           ))}

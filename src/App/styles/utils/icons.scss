@@ -2,7 +2,7 @@
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  background-color: $black;
+  background-color: $white;
   mask-repeat: no-repeat;
   mask-position: 50%;
   transition: background-color 300ms ease-in-out;
@@ -31,16 +31,17 @@
 
   //icons
   &--search {
-    content: url(/app/assets/icons/search.svg);
+    mask-image: url(/app/assets/icons/search.svg);
   }
 
   &--sort {
-    content: url(/app/assets/icons/sort.svg);
+    mask-image: url(/app/assets/icons/sort.svg);
   }
   &--upload {
-    content: url(/app/assets/icons/upload.svg);
+    mask-image: url(/app/assets/icons/upload.svg);
   }
   &--back {
-    content: url(/app/assets/icons/back.svg);
+    mask-image: url(/app/assets/icons/back.svg);
+    background-color: $black;
   }
 }

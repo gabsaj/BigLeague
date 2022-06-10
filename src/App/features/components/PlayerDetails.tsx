@@ -8,15 +8,23 @@ interface Props {
 const PlayerDetails: React.FC<Props> = (props) => {
   const { player } = props;
   return (
-    <div className="profile mt--30">
-      <div className="card__imgContainer">
-        <div className="img--profile"></div>
+    <div className="profile">
+      <div className="profile__imgContainer mt--32">
+        <div className="img--card "></div>
         <div className="card__flag"></div>
       </div>
-      <div className="card__name mt--30">{player.name}</div>
-      <div className="card__property mt--30">{player.nickname}</div>
-      <div className="card__property mt--30">{player.country}</div>
-      <div className="card__property mt--30">{player.earnings}</div>
+      <div className="profile__name type--bangers type--wgt--regular mt--32">
+        {player.name}
+      </div>
+      <div className="profile__property mt--32 type--poppins type--wgt--regular">
+        {player.nickname}
+      </div>
+      <div className="profile__property mt--32 type--poppins type--wgt--regular">
+        {player.country}
+      </div>
+      <div className="profile__property mt--32 type--poppins type--wgt--regular">
+        {player.earnings}
+      </div>
     </div>
   );
 };

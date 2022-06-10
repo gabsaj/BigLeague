@@ -5,13 +5,31 @@ utils:images.scss
 .img {
   display: inline-block;
   vertical-align: middle;
-  mask-repeat: no-repeat;
-  mask-position: 50%;
   //sizes
+  &--card {
+    content: url(/app/assets/images/player1.webp);
+    height: $card--img;
+    width: $card--img;
+    border-radius: $border-circle;
+  }
   &--profile {
     content: url(/app/assets/images/player1.webp);
-    height: 203px;
-    width: 203px;
     border-radius: $border-circle;
+    width: $profile--img;
+    height: $profile--img;
+  }
+  &--logo {
+    &--top {
+      content: url(../../assets/images/logo-top.svg);
+    }
+    &--bottom {
+      content: url(../../assets/images/logo-bottom.svg);
+    }
+  }
+  &--404 {
+    content: url(../../assets/images/404.svg);
+  }
+  &--text {
+    content: url(../../assets/images/text.svg);
   }
 }
