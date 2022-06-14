@@ -1,53 +1,39 @@
 {
   "players": [
     {
-      "name": "Victor",
+      "name": "Nikki",
       "country": "Croatia",
-      "nickname": "Vik",
-      "id": "Jk3cNhA",
-      "earnings": 65.922
+      "nickname": "Nick",
+      "id": "bea2992c-90b1-46a6-a7f7-59de0341bbf5",
+      "earnings": 284392
     },
     {
-      "name": "Zlovimir",
-      "country": "Ireland",
-      "nickname": "Zloova",
-      "id": "NmtDuWh",
-      "earnings": 22.436
+      "name": "Jack",
+      "country": "Cuba",
+      "nickname": "Jack",
+      "id": "ee3f1cc3-22ef-4053-83e9-08abef563bbf",
+      "earnings": 765234
     },
     {
-      "name": "Alibaba",
-      "country": "Countrystan",
-      "nickname": "BigAl",
-      "id": "d0775b92-a194-49b1-b9a1-e1c5d174696b",
-      "earnings": 121.065
+      "name": "MrFrodo",
+      "country": "Shire",
+      "nickname": "Frodo",
+      "id": "5d20819d-4b6f-480f-9e9d-b6f448f175ca",
+      "earnings": 12745
     },
     {
-      "name": "Peter",
-      "country": "Ireland",
-      "nickname": "Pete",
-      "id": "05bb982c-d678-4472-bd5c-af0bea156be3",
-      "earnings": 7.589
+      "name": "Hector",
+      "country": "Mexico",
+      "nickname": "Don",
+      "id": "83ff2448-cc0c-4249-8fb6-1a6e2a86c96a",
+      "earnings": 999888
     },
     {
-      "name": "Felipe",
-      "country": "Columbia",
-      "nickname": "Feelip",
-      "id": "bd3adae5-85d7-44e0-a14f-1cf9cfc53cd4",
-      "earnings": 159.221
-    },
-    {
-      "name": "Juan",
-      "country": "Spain",
-      "nickname": "J23",
-      "id": "da74f104-de20-4dac-b649-4e001555bee9",
-      "earnings": 48.987
-    },
-    {
-      "name": "ime",
-      "country": "zemlja",
-      "nickname": "nik",
-      "id": "ca593f86-6214-4862-8274-147afb8bf6b3",
-      "earnings": 102
+      "name": "Zorislav",
+      "country": "Croatia",
+      "nickname": "Zoro",
+      "id": "1bf1b596-85fd-4bff-a8b4-af997b1683c5",
+      "earnings": 109820137
     }
   ]
 }

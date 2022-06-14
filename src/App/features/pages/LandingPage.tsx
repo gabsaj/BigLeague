@@ -4,18 +4,30 @@ import Card from "../components/Card";
 import Nav from "../components/Nav";
 import PlayerService from "../../services/playerService";
 import { Link } from "react-router-dom";
-
+import { toast, Flip } from "react-toastify";
+const playersPerLoad = 6;
 const LandingPage = () => {
   const [playersList, setPlayersList] = useState<Player[]>([]);
+  const [loadMore, setLoadMore] = useState(playersPerLoad);
   const playerService = new PlayerService();
   const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleLoadMore = () => {
+    setLoadMore(loadMore + playersPerLoad);
+  };
 
   const fetchPlayers = async () => {
     try {
       const response = await playerService.getPlayers();
       setPlayersList(response);
     } catch (error) {
-      console.log(error);
+      toast.error("Failed load players.", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+        transition: Flip,
+        theme: "dark",
+      });
     }
   };
 
@@ -34,9 +46,19 @@ const LandingPage = () => {
       return value;
   };
 
+  const playerNotFound = () => {
+    toast.error("Player not found.", {
+      position: "top-center",
+      hideProgressBar: true,
+      autoClose: 2000,
+      transition: Flip,
+      theme: "dark",
+    });
+  };
+
   useEffect(() => {
     fetchPlayers();
-  });
+  }, []);
 
   return (
     <div className="App">
@@ -60,8 +82,13 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="card__container mb--40">
-          <Link to={`/not-found`} className="card " key="1">
+        <div className="card__container">
+          <Link
+            onClick={() => playerNotFound()}
+            to={`/not-found`}
+            className="card "
+            key="1"
+          >
             <div className="card__imgContainer">
               <div className="card__img"></div>
               <div className="card__flag"></div>
@@ -75,6 +102,7 @@ const LandingPage = () => {
             <Card player={player} />
           ))}
         </div>
+        <button className="btn btn--load my--40">Load more</button>
       </div>
     </div>
   );

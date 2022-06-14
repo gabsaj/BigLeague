@@ -9,7 +9,7 @@ const NotFound = () => {
         <div className="btn btn--back">
           <i className="icon icon--md icon--back"></i>
         </div>
-        <div>Back</div>
+        <div className="ml--16">Back</div>
       </Link>
       <div className="main__layout">
         <div className="profile">

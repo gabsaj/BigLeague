@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast, Flip } from "react-toastify";
 import { v4 as id } from "uuid";
 import PlayerService from "../../services/playerService";
@@ -9,11 +9,17 @@ const AddPlayer = () => {
   const [playerName, setPlayerName] = useState<string>("");
   const [country, setCountry] = useState<string>("");
   const [nickname, setNickname] = useState<string>("");
-  const [totalEarnings, setTotalEarnings] = useState<number>();
+  const [totalEarnings, setTotalEarnings] = useState<number>(0);
   const playerService = new PlayerService();
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    if (playerName !== "" && country !== "" && nickname !== "") {
+    if (
+      playerName !== "" &&
+      country !== "" &&
+      nickname !== "" &&
+      totalEarnings > 0
+    ) {
       await playerService.createPlayer({
         name: playerName,
         country: country,
@@ -21,6 +27,7 @@ const AddPlayer = () => {
         id: id(),
         earnings: totalEarnings ? totalEarnings : null,
       });
+      navigate("/");
       toast.success("Player created.", {
         position: "top-center",
         hideProgressBar: true,
@@ -45,13 +52,13 @@ const AddPlayer = () => {
         <div className="btn btn--back">
           <i className="icon icon--md icon--back"></i>
         </div>
-        <div>Back</div>
+        <div className="ml--16">Back</div>
       </Link>
       <div className="main__layout">
         <div className="main__layout__title type--bangers type--wgt--regular py--80">
           Add new player
         </div>
-        <div className="property__container">
+        <div className="property__container mb--40">
           <div className="property mt--32">
             <div className="property__title type--bangers type--wgt--regular mb--6">
               Name

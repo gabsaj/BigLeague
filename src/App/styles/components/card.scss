@@ -13,7 +13,6 @@ components: card.scss
   border-radius: $border-round;
   &:hover {
     box-shadow: 0px -5px 10px $gradient-green, 0px 5px 10px $gradient-blue;
-    transform: scale(1.02);
     transition: 80ms;
   }
   &__container {
@@ -24,6 +23,7 @@ components: card.scss
     gap: 30px;
   }
   &__imgContainer {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,13 +37,11 @@ components: card.scss
     height: $card--img;
     width: $card--img;
     border-radius: $border-circle;
-    transform: translateX(30px);
     &--large {
       content: url(/app/assets/images/player1.webp);
-      width: 400px;
-      height: 400px;
+      width: $profile--img;
+      height: $profile--img;
       border-radius: $border-circle;
-      transform: translateX(30px);
     }
   }
   &__name {
@@ -57,10 +55,12 @@ components: card.scss
   }
   &__flag {
     content: url(../../assets/images/flag.webp);
+    position: absolute;
     width: 60px;
     height: 60px;
     border: 2px solid $white;
     border-radius: $border-circle;
-    transform: translateX(-10px) translateY(30px);
+    bottom: 0;
+    right: 0;
   }
 }

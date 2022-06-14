@@ -23,3 +23,14 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: #7afe63;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #7afe63;
+  border-radius: 20px;
+  background-color: #018bf3;
+}

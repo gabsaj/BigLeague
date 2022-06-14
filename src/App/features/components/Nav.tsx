@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const Nav = () => {
   const [pageName, setPageName] = useState<string>("");
+
+  const params = useParams();
 
   const switchName = () => {
     switch (window.location.pathname) {
       case "/":
         setPageName("Home");
         break;
-      case "/player-page/":
-        setPageName("Player profile");
+      case `/player-page/${params.playerId}`:
+        setPageName(`Player profile`);
         break;
       case "/add-player":
         setPageName("Add Player");

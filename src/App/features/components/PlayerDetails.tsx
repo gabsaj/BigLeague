@@ -8,10 +8,10 @@ interface Props {
 const PlayerDetails: React.FC<Props> = (props) => {
   const { player } = props;
   return (
-    <div className="profile">
-      <div className="profile__imgContainer mt--32">
+    <div className="profile mt--288 mb--64">
+      <div className="profile__imgContainer">
         <div className="card__img--large"></div>
-        <div className="card__flag"></div>
+        <div className="profile__flag"></div>
       </div>
       <div className="profile__name type--bangers type--wgt--regular mt--32">
         {player.name}
