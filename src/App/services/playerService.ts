@@ -1,11 +1,18 @@
+import { Direction } from "readline";
 import { Player } from "../types/Player";
 import { BaseService } from "./baseService";
 
 export default class PlayerService extends BaseService {
   // Get Players
 
-  async getPlayers(): Promise<Player[]> {
-    const response = await this.instance.get("players");
+  async getPlayers(
+    sort: string,
+    limit: number,
+    sortDirection?: string
+  ): Promise<Player[]> {
+    const response = await this.instance.get(
+      `players?_sort=${sort}&_order=${sortDirection}&_limit=${limit}`
+    );
     return response.data;
   }
 

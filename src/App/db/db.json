@@ -34,6 +34,34 @@
       "nickname": "Zoro",
       "id": "1bf1b596-85fd-4bff-a8b4-af997b1683c5",
       "earnings": 109820137
+    },
+    {
+      "name": "Johnny",
+      "country": "Narnia",
+      "nickname": "Johnny",
+      "id": "a054f2d6-fffa-4d2e-b0a3-fc8175619506",
+      "earnings": 66518
+    },
+    {
+      "name": "Peter",
+      "country": "Middle Earth",
+      "nickname": "Pete",
+      "id": "942c9e69-89a7-49b2-80ae-8d2998ec18fe",
+      "earnings": 816547
+    },
+    {
+      "name": "Djuro",
+      "country": "Bosnia",
+      "nickname": "Djuka",
+      "id": "8916f618-9df3-4fa7-9cf1-62440011da85",
+      "earnings": 12093412
+    },
+    {
+      "name": "Ivan",
+      "country": "Croatia",
+      "nickname": "Bole",
+      "id": "67285ad8-f8da-4e6a-bd32-870da98bd21d",
+      "earnings": 1418410932841
     }
   ]
 }
