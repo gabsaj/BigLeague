@@ -22,7 +22,7 @@ const Nav = () => {
 
   useEffect(() => {
     switchName();
-  });
+  }, []);
 
   return (
     <div className="nav">

@@ -28,7 +28,7 @@ const LandingPage = () => {
       );
       setPlayersList(response);
     } catch (error) {
-      toast.error("Failed load players.", {
+      toast.error("Failed to load players.", {
         position: "top-center",
         hideProgressBar: true,
         autoClose: 3000,
