@@ -9,7 +9,13 @@ interface Props {
 const Card: React.FC<Props> = (props) => {
   const { player } = props;
   return (
-    <NavLink to={`/player-page/${player.id}`} className="card" key={player.id}>
+    <NavLink
+      to={`${
+        player.name === "Unknown" ? `/not-found` : `/player-page/${player.id}`
+      }`}
+      className="card"
+      key={player.id}
+    >
       <div className="card__imgContainer">
         <div className="card__img"></div>
         <div className="card__flag"></div>

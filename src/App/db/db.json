@@ -1,6 +1,13 @@
 {
   "players": [
     {
+      "name": "Unknown",
+      "country": "Unknown",
+      "nickname": "Unknown",
+      "id": "Unknown",
+      "earnings": 0
+    },
+    {
       "name": "Nikki",
       "country": "Croatia",
       "nickname": "Nick",

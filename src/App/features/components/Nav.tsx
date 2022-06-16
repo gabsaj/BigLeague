@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
+
 import { NavLink, useParams } from "react-router-dom";
 
 const Nav = () => {

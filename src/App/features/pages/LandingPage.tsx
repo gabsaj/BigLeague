@@ -1,11 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { Player } from "../../types/Player";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
 import PlayerService from "../../services/playerService";
-import { Link } from "react-router-dom";
 import { toast, Flip } from "react-toastify";
-
 const LandingPage = () => {
   const [playersList, setPlayersList] = useState<Player[]>([]);
   const [initialLoad, setInitialLoad] = useState(6);
@@ -68,16 +67,6 @@ const LandingPage = () => {
     }
   };
 
-  const playerNotFound = () => {
-    toast.error("Player not found.", {
-      position: "top-center",
-      hideProgressBar: true,
-      autoClose: 2000,
-      transition: Flip,
-      theme: "dark",
-    });
-  };
-
   useEffect(() => {
     fetchPlayers();
   }, [initialLoad, sortDirection]);
@@ -108,24 +97,13 @@ const LandingPage = () => {
         </div>
 
         <div className="card__container my--40">
-          <Link
-            onClick={() => playerNotFound()}
-            to={`/not-found`}
-            className="card "
-            key="1"
-          >
-            <div className="card__imgContainer ">
-              <div className="card__img"></div>
-              <div className="card__flag"></div>
-            </div>
-            <div className="card__name type--bangers type--wgt--regular">
-              PlayerUnknown
-            </div>
-            <div className="card__property ">NoNickname</div>
-          </Link>
-          {playersList.filter(Players).map((player) => (
-            <Card key={player.id} player={player} />
-          ))}
+          {playersList.length === 0 ? (
+            <div>No players</div>
+          ) : (
+            playersList
+              .filter(Players)
+              .map((player) => <Card key={player.id} player={player} />)
+          )}
         </div>
 
         <button
