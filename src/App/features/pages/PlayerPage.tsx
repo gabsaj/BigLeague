@@ -27,7 +27,7 @@ const PlayerPage = () => {
         setPlayer(response);
       }
     } catch (error) {
-      toast.error("Failed to create a player.", {
+      toast.error("Failed to find a player.", {
         position: "top-center",
         hideProgressBar: true,
         autoClose: 2000,
@@ -42,7 +42,7 @@ const PlayerPage = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <Nav />
       <Link to={"/"} className="back type--poppins type--wgt--regular">
         <div className="btn btn--back">
